@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+    {% load static %}
+    {% block styles  %} 
+    <link rel="stylesheet" href="{% static 'core/css/portfolio-projects.css' %}">
+    {% endblock %}
+
+    {% block title %} - Portafolio{% endblock %}
+
+    {% block content %} 
+    <section>
+        <h2 class="title-section">Portafolio</h2>
+        <article class="container">
+            {% for portfolio in portfolio %}
+            <div class="card">
+                <img class="card-img" src="{{portfolio.image.url}}" alt="">
+                <div class="card-content">
+                    <h3 class="card-title">{{portfolio.title}}</h3>
+                    <p class="tags">{% for category in portfolio.categories.all %} <span>{{category.name}}</span> {% endfor %}</p>
+                    <p class="card-description">{{portfolio.content}}</p>
+                    <div class="card-button-container">
+                        {% if portfolio.visit %}<a href="{{portfolio.visit}}" class="card-button" target="_blank">Visitar</a>{% endif %}
+                        {% if portfolio.repository %}<a href="{{portfolio.repository}}" class="card-button" target="_blank">Repositorio</a>{% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </article>
+    </section>
+    {% endblock %}

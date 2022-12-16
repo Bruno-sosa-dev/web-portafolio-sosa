@@ -1,0 +1,93 @@
+{% extends 'core/base.html' %}
+    {% load static %}
+    {% block styles  %} 
+    <link rel="stylesheet" href="{% static 'core/css/about-me.css' %}">
+    {% endblock %}
+
+    
+    {% block title %} - Acerca de mí{% endblock %}
+
+    {% block content %}
+    <section>
+        <h2 class="title-section">Acerca de mi</h2>
+        <article>
+            <h3 class="title">Habilidades</h3>
+            <div class="skills-container">
+                <div class="card-skills">
+                    <img src="{% static 'core/img/html5.webp' %}" alt="html5">
+                    <p class="card-skills-title">HTML5</p>
+                </div>
+
+                <div class="card-skills">
+                    <img src="{% static 'core/img/css3.webp' %}" alt="css3">
+                    <p class="card-skills-title">CSS3</p>
+                </div>
+
+                <div class="card-skills">
+                    <img src="{% static 'core/img/bootstrap.webp' %}" alt="bootstrap">
+                    <p class="card-skills-title">Bootstrap</p>
+                </div>
+                <div class="card-skills">
+                    <img src="{% static 'core/img/python.webp' %}" alt="python">
+                    <p class="card-skills-title">Python</p>
+                </div>
+
+                <div class="card-skills">
+                    <img src="{% static 'core/img/django.webp' %}" alt="django">
+                    <p class="card-skills-title">Django</p>
+                </div>
+
+                <div class="card-skills">
+                    <img src="{% static 'core/img/javascript.webp' %}" alt="javascript">
+                    <p class="card-skills-title">JavaScript</p>
+                </div>
+
+                <div class="card-skills">
+                    <img src="{% static 'core/img/git.webp' %}" alt="git">
+                    <p class="card-skills-title">Git</p>
+                </div>
+
+                <div class="card-skills">
+                    <img src="{% static 'core/img/github.webp' %}" alt="github">
+                    <p class="card-skills-title">Github</p>
+                </div>
+            </div>
+        </article>
+
+        <article>
+            <h3 class="title">Servicios</h3>
+            <div class="services-container">
+                <div class="card-services">
+                    <div class="card-services-content">
+                        <h4>Responsive</h4>
+                        <div class="card-services-separador"></div>
+                        <p>Diseño web adaptable, es una filosofía de diseño y desarrollo cuyo objetivo es adaptar la apariencia de las páginas web al dispositivo que se esté utilizando para visitarlas.</p>
+                    </div>
+                </div>
+                <div class="card-services">
+                    <div class="card-services-content">
+                        <h4>Webs dinamicas</h4>
+                        <div class="card-services-separador"></div>
+                        <p>Webs dinámicas que permiten cambiar fácilmente su contenido en tiempo real sin siquiera tocar el código de la página. Sin hacer manualmente cualquier cambio.</p>
+                    </div>
+                </div>
+                <div class="card-services">
+                    <div class="card-services-content">
+                        <h4>Diseños limpios</h4>
+                        <div class="card-services-separador"></div>
+                        <p>
+                            Mi objetivo es crear sitios webs llamativos, organizados, limpios y muy creativos en los que el usuario se sienta comodo.</p>
+                    </div>
+                </div>
+                <div class="card-services">
+                    <div class="card-services-content">
+                        <h4>SEO</h4>
+                        <div class="card-services-separador"></div>
+                        <p>Es un conjunto de acciones orientadas a mejorar el posicionamiento de un sitio web en la lista de resultados de Google.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    {% endblock %}

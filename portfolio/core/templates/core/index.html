@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+{% load static %}
+    {% block styles  %}
+    <link rel="stylesheet" href="{% static 'core/css/index.css' %}">
+    {% endblock  %}
+
+    
+    {% block content %}
+    <header>
+        <div class="header-content">
+            <div class="logo"><img src="{% static 'core/img/logo-animado.gif' %}" alt=""></div>
+            <h1>Bruno Sosa</h1>
+            <p>Desarrollador web freelancer</p>
+            <div class="social">
+                {% if LINK_INSTAGRAM %}<a href="{{LINK_INSTAGRAM}}" target="_blank"><img src="{% static 'core/img/instagram.webp' %}" alt="instagram"></a>{% endif %}
+                {% if LINK_GITHUB %}<a href="{{LINK_GITHUB}}" target="_blank"><img src="{% static 'core/img/github.webp' %}" alt="github"></a>{% endif %}
+                {% if LINK_GMAIL %}<a href="{{LINK_GMAIL}}" target="_blank"><img src="{% static 'core/img/gmail.webp' %}" alt="gmail"></a>{% endif %}
+            </div>
+        </div>
+    </header>
+    {% endblock %}
+    

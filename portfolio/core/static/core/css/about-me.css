@@ -1,0 +1,137 @@
+:root {
+    --title-about-me: 30px;
+    --content-about-me: 25px;
+}
+
+article {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 90px;
+}
+
+.title {
+    font-family: var(--font);
+    font-size: var(--title-about-me);
+    font-weight: 100;
+    color: var(--color-1);
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.skills-container {
+    width: 100%;
+    margin: auto;
+    min-height: 155px;
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+    grid-template-columns: repeat(8, 11.25%);
+    row-gap: 5px;
+    color: var(--color-2);
+    font-family: var(--font);
+}
+
+.card-skills {
+    text-align: center;
+    transition: .3s;
+    margin: 10px;
+    padding: 15px 10px;
+    border: solid 1px var(--color-2);
+}
+
+.card-skills img {
+    width: 80px;
+}
+
+.card-skills:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0px 0px 8px var(--color-2));
+}
+
+.services-container {
+    min-height: 80px;
+    display: grid;
+    justify-content: center;
+    gap: 20px 20px;
+    grid-template-columns: repeat(2, calc(50% - 60px));
+}
+
+.card-services {
+    width: 100%;
+    padding: 30px 0px;
+    border: solid 1px var(--color-2);
+    color: var(--color-1);
+    font-family: var(--font);
+    text-align: center;
+    transition: .5s;
+}
+
+.card-services:hover {
+    transform: scale(1.02);
+}
+
+.card-services-content {
+    padding: 30px;
+}
+
+.card-services h4 {
+    font-size: 20px;
+    padding: 5px;
+}
+
+.card-services-separador {
+    height: 1px;
+    margin: 10px 0px;
+    background-color: var(--color-2);
+    color: var(--color-2);
+}
+
+@media (max-width:1230px) {
+     :root {
+        --title-about-me: 25px;
+        --content-about-me: 13px;
+    }
+    .about-me {
+        display: grid;
+        grid-template-columns: 350px calc(100% - 350px);
+    }
+    .about-me-img {
+        width: 300px;
+        height: 400px;
+    }
+}
+
+@media (max-width:1230px) {
+    .skills-container {
+        grid-template-columns: repeat(4, 25%);
+    }
+}
+
+@media (max-width: 982px) {
+    .services-container {
+        grid-template-columns: 90%;
+    }
+}
+
+@media (max-width:863px) {
+    .about-me {
+        grid-template-columns: 100%;
+    }
+    .about-me-content {
+        margin: 0px 0px;
+        margin-top: 30px;
+        text-align: center;
+    }
+}
+
+@media (max-width:700px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 50%);
+    }
+}
+
+@media (max-width:350px) {
+    .card-services-content {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-3);
+    min-height: 100vh;
+    top: 0;
+}
+
+:root {
+    --color-1: #ffffff;
+    --color-2: #b6b6b6;
+    --color-3: #0c0c0c;
+    --invert-img: 0%;
+    --invert-img-reverse: 100%;
+    --font: 'Poppins', sans-serif;
+    --title-heading: 90px;
+    --subtitle-heading: 25px;
+    --title-section: 63px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: var(--color-1);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-3);
+}
+
+::selection {
+    background-color: var(--color-2);
+    color: var(--color-3);
+}
+
+.nav-container {
+    position: relative;
+}
+
+.button-nav {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 100;
+}
+
+.button-nav img {
+    width: 50px;
+    padding: 2px;
+    filter: invert(var(--invert-img));
+}
+
+.change-color {
+    background-color: var(--color-1);
+}
+
+.change-color img {
+    filter: invert(var(--invert-img-reverse));
+}
+
+.nav-content {
+    width: 500px;
+    height: 58px;
+    top: 15px;
+    background-color: var(--color-1);
+    color: var(--color-3);
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: .2s;
+    z-index: 100;
+}
+
+.link {
+    margin: 0px 5px;
+    padding: 3px 5px;
+    text-decoration: none;
+    font-family: var(--font);
+    color: var(--color-3);
+    font-size: 13px;
+}
+
+.active {
+    background-color: var(--color-3);
+    color: var(--color-1);
+    text-decoration: underline var(--color-1);
+}
+
+.public {
+    right: 69px;
+    z-index: 100;
+    display: flex;
+}
+
+.title-section {
+    color: var(--color-1);
+    font-family: var(--font);
+    font-size: var(--title-section);
+    text-align: center;
+    padding-top: 65px;
+    margin-bottom: 30px;
+}
+
+@media (max-width:768px) {
+    .button-nav img {
+        width: 33px;
+        transition: .5s;
+    }
+    .change-color {
+        background-color: transparent;
+        position: fixed;
+    }
+    .nav-content {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        right: -100%;
+        transition: .5s;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .nav-content a {
+        width: 70%;
+        padding: 10px 0px;
+        text-align: center;
+        font-size: 18px;
+    }
+    .public {
+        right: 0;
+    }
+}
+
+@media (max-width:468px) {
+     :root {
+        --title-section: 50px;
+    }
+}
+
+@media (max-width:363px) {
+     :root {
+        --title-section: 42px;
+    }
+}

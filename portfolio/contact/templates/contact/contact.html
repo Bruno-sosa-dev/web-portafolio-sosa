@@ -1,0 +1,34 @@
+{% extends 'core/base.html' %}
+    {% load static %}
+    {% block styles  %} 
+    <link rel="stylesheet" href="{% static 'core/css/contact.css' %}">
+    {% endblock %}
+    
+    {% block title %} - Contáctame{% endblock %}
+
+    {% block content %}
+    <section>
+        <h2 class="title-section">Contáctame</h2>
+        <div class="container">
+            <div class="logo-social">
+                <img class="logo" src="{% static 'core/img/logo-w.webp' %}" alt="logo">
+                <div class="social">
+                    {% if LINK_INSTAGRAM %}<a href="{{LINK_INSTAGRAM}}" target="_blank"><img src="{% static 'core/img/instagram.webp' %}" alt="instagram">Instagram</a>{% endif %}{% if LINK_INSTAGRAM == None %}<div></div>{% endif %}
+                    {% if LINK_GITHUB %}<a href="{{LINK_GITHUB}}" target="_blank"><img src="{% static 'core/img/github.webp' %}" alt="github">Github</a>{% endif %}{% if LINK_GITHUB == None %}<div></div>{% endif %}
+                    {% if LINK_GMAIL %}<a href="{{LINK_GMAIL}}" target="_blank"><img src="{% static 'core/img/gmail.webp' %}" alt="gmail">Gmail</a>{% endif %}{% if LINK_GMAIL == None %}<div></div>{% endif %}
+                </div>
+            </div>
+                <form action="" method="POST" class="form">
+                    {% if 'ok' in request.GET %}
+                        <p><b class="valid">Su mensaje ha sido enviado, nos pondremos en contacto.</b></p>
+                    {% endif %}
+                    {% if 'fail' in request.GET %}
+                        <p><b class="invalid">Algo a fallado, intenta nuenvamente mas tarde.</b></p>
+                    {% endif %}
+                    {% csrf_token %}
+                    {{form}}
+                    <input class="submit" type="submit">
+                </form>
+        </div>
+    </section>
+    {% endblock %}

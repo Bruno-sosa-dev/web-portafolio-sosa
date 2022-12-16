@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Desarrollador web freelancer | web responsive, diseños limpios y creativos, paginas dinamicas funcionales y buenas practicas de SEO">
+    <meta name="author" content="Bruno Sosa">
+
+    <!-- font-family: 'Poppins', sans-serif; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'core/css/styles.css' %}">
+    {% block styles  %}{% endblock  %}
+    <link rel="icon" href="{% static 'core/img/icono.png' %}">
+    <title>Bruno Sosa{% block title  %}{% endblock  %}</title>
+</head>
+
+<body>
+    <div class="nav-container">
+        <nav>
+            <div class="nav-content">
+                <a href="{% url 'home' %}" class="link {% if request.path == '/' %}active{% endif %}">Inicio</a>
+                <a href="{% url 'about' %}" class="link {% if request.path == '/acerca-de-mí/' %}active{% endif %}">Acerca de mí</a>
+                <a href="{% url 'portfolio' %}" class="link {% if request.path == '/portafolio/' %}active{% endif %}">Portafolio</a>
+                <a href="{% url 'projects' %}" class="link {% if request.path == '/proyectos/' %}active{% endif %}">Poroyectos</a>
+                <a href="{% url 'contact' %}" class="link {% if request.path == '/contactamé/' %}active{% endif %}">Contáctame</a>
+            </div>
+            <span class="button-nav"><img src="{% static 'core/img/nav.webp' %}" alt=""></span>
+        </nav>
+    </div>
+    {% block content %}{% endblock %}
+    <script src="{% static 'core/app.js' %}"></script>
+</body>
+
+</html>
