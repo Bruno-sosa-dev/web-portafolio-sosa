@@ -1,3 +1,4 @@
+Django==3.2.8
 django==3.2.8
 django-ckeditor==6.5.1
 django-colorfield==0.7.2
